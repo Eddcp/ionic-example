@@ -1,0 +1,42 @@
+<!--
+  Generated template for the CostCenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true" color="primary">
+    <ion-title>Página Inicial</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Selecione o centro de custo</ion-label>
+      <ion-select [(ngModel)]="selectedCostCenter">
+        <ion-option [value]="costCenter.centroCustoId" *ngFor="let costCenter of costCentersList">{{costCenter.cctNomeReduzido}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Selecione o bloco</ion-label>
+      <ion-select [(ngModel)]="selectedBlock">
+        <ion-option [value]="block.blocoGrupoId" *ngFor="let block of blockList">{{block.bgDescricao}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom">
+		<button ion-button full (click)="openOrderListPage()" [disabled]="!selectedBlock || !selectedCostCenter">Prosseguir</button>
+	</ion-toolbar>
+</ion-footer>

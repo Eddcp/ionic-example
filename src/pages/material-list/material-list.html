@@ -1,0 +1,50 @@
+<!--
+  Generated template for the MaterialListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Lista de Materiais</ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <accordion [accordionObject]="material" [accordionList]="listaMateriais" *ngFor="let material of listaMateriais">
+    <div header>
+      <div class="card__title">
+        {{material.descricao}}
+      </div>
+      <div class="card__subtitle">
+        <span>Código: {{material.codigo}}</span>
+        <span class="float--right">Qtd: {{material.qtd}}</span>
+      </div>
+    </div>
+    <div body>
+      <div class="block__content--inside">
+        <div class="block-inside">
+          <div>
+            <span class="block-inside__title">Estoque FAEPU | LT: <strong>121332</strong> | VL: <strong>05/05/2019</strong></span>
+          </div>
+
+          <p class="block-inside__text">
+            <span>Corredor 01 | Prateleira 05 | Qtd 27</span>
+          </p>
+
+          <ion-item>
+            <ion-input placeholder="Código de barras" type="text"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </accordion>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Rastreabilidade",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

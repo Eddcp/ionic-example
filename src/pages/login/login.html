@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Rastreabilidade</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="login">
+    <form #loginForm="ngForm" (ngSubmit)="login()" class="login-form" autocomplete="off">
+      <div class="login-form__header">
+        <h3>Área Restrita</h3>
+      </div>
+      <div class="login-form__body">
+        <ion-item>
+          <ion-label floating>Usuário</ion-label>
+          <ion-input class="login-form__input" type="text" required [(ngModel)]="user" name="user"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input class="login-form__input" type="password" required [(ngModel)]="password" name="password"></ion-input>
+        </ion-item>
+      </div>
+      <div class=login-form__footer>
+        <button ion-button full type="submit" [disabled]="!loginForm.form.valid">Acessar</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

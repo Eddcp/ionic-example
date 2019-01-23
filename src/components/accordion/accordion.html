@@ -1,0 +1,9 @@
+<!-- Fazendo dessa maneira o componente accordion fica reutilizável, sendo possível passar qualquer header e qualquer body -->
+<ion-card>
+  <ion-card-header (click)="toggleAccordion(accordionObject)">
+    <ng-content select="[header]"></ng-content> <!-- Sempre passar seletor com a propriedade header pra garantir que será renderizado aqui -->
+  </ion-card-header>
+  <ion-card-content #cardContent class="accordion-content" [ngClass]="{'accordion-content--expanded': accordionObject.expanded}">
+    <ng-content select="[body]"></ng-content> <!-- Sempre passar seletor com a propriedade body pra garantir que será renderizado aqui -->
+  </ion-card-content>
+</ion-card>
